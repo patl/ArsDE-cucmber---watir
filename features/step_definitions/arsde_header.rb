@@ -7,15 +7,9 @@ Given(/^user goes to Arsmunfi de site$/) do
 
   @browser.alert.ok
   @browser.goto 'http://development-web-arsmundi.demandware.net/s/ArsMundi/de/Start'
-  saved_cookies = browser.cookies.to_a
-
   @browser.goto 'https://storefront:osf@development-web-arsmundi.demandware.net/s/ArsMundi/de/Start'
-  @browser.cookies.clear
-  saved_cookies.each do |saved_cookie|
-    @browser.cookies.add(saved_cookie[:name], saved_cookie[:value])
-  end
+   end
 
-end
 
 
 When(/^The site is open user observe the Logo$/) do
@@ -28,8 +22,7 @@ And(/^Observe the Header links$/) do
   @browser.link(:text => 'Expertensuche').visible?
   @browser.link(:text => 'Merkzettel').visible?
   @browser.link(:text => 'Einloggen').visible?
-
-    end
+  end
 
 And(/^Observe the Menu links$/) do
   @browser.link(:text => 'Neu').visible?

@@ -33,6 +33,6 @@ Then(/^Fill The form with data$/) do
   sleep(5)
 end
 
-And(/^data and create account$/) do
+And(/^and create account$/) do
   @browser.button(:name,"dwfrm_profile_confirm").click
 end
