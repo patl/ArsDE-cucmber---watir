@@ -1,17 +1,6 @@
 require 'watir-webdriver'
 require 'cucumber'
 
-
-Given(/^user goes to Arsmunfi de site$/) do
-  @browser = Watir::Browser.new :ff
-
-  @browser.alert.ok
-  @browser.goto 'http://development-web-arsmundi.demandware.net/s/ArsMundi/de/Start'
-  @browser.goto 'https://storefront:osf@development-web-arsmundi.demandware.net/s/ArsMundi/de/Start'
-   end
-
-
-
 When(/^The site is open user observe the Logo$/) do
 
  @browser.title.equal?("Ars Mundi logos")

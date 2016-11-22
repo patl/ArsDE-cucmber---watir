@@ -1,7 +1,7 @@
 Feature: Check header on ArsDe
 
   Scenario: User cen see some elements on the header
-    Given user goes to Arsmunfi de site
+    Given User is on the home page
     When The site is open user observe the Logo
     And Observe the Header links
     And Observe the Menu links
