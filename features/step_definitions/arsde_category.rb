@@ -28,7 +28,12 @@ end
 And(/^Check the Ref$/) do
   @browser.div(:class, "refinement Künstler").when_present.click
   @browser.li(:text,'Aeffner, Thomas').when_present.click
-  @browser.find_element(:xpath, "//div[@id='secondary']/div[5]/div").click
-  @browser.find_element(:xpath, "(//input[@type='checkbox'])[2]").click
-  verify { (@browser.find_element(:css, "div.product-artist-name").text).should == "Thomas Aeffner" }
+
+  @browser.div(:class, "refinement Motive").when_present.click
+  @browser.input(:xpath, 'html/body/div[1]/div[3]/div[3]/div[6]/ul/li/input[3]').when_present.click
+  @browser.div(:css, "product-artist-name")==" Thomas Aeffner "
+  @browser.text.include?("Thomas Aeffner")
+  @browser.div(:css, '.product-artist-name')=="Thomas Aeffner"
+
+
 end
